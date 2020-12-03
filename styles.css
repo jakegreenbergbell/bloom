@@ -1,0 +1,79 @@
+html,body{
+    margin:0;padding:0;
+}
+#grid-container{
+    display:grid;
+    grid-template-rows: 100vh;
+    grid-template-columns: 100vw;
+}
+
+#map-container {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    width:100%;
+    height:100%;
+    position: relative;
+    align-items:center;
+    overflow:hidden;
+    margin:0;
+    padding:0;
+}
+
+.map {
+    width:100%;
+    height:100%;
+    align-items:center;
+    margin:0;
+    padding:0;
+
+}
+
+.pauley {
+    position: absolute;
+    top: 50%;
+    left: 33%;
+    height: 80px;
+    width: 80px;
+}
+
+.transform {
+    -webkit-transition: all 2.0s ease-in;  
+    -moz-transition: all 2.0s ease-in;  
+    -o-transition: all 2.0s ease-in;  
+    -ms-transition: all 2.0s ease-in;  
+    transition: all 2.0s ease-in;
+}
+
+.pauley-zoom {
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+}
+    
+.map-zoom {
+    /* left:-50vw;
+    top: -50vh;
+    width: 200%;
+    height:200%; */
+    transform: scale(3.5) translate(15%);
+}
+
+#cloud {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    animation-name: cloud;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    height: 40px;
+    width: 60px;
+}
+
+@keyframes cloud {
+    0% {left:5%;}
+    50% {left: 0%;}
+    100% {left:5%;}
+}
