@@ -1,5 +1,6 @@
 html,body{
     margin:0;padding:0;
+    background-color:dodgerblue;
 }
 #grid-container{
     display:grid;
@@ -29,6 +30,20 @@ html,body{
     padding:0;
 
 }
+.janss {
+    position: absolute;
+    top: 38%;
+    left: 38%;
+    height: 80px;
+    width: 150px;
+    z-index:2;
+}
+.janss-zoom {
+    height: 50%;
+    width: 50%;
+    top: 0px;
+    left: 0px;
+}
 
 .pauley {
     position: absolute;
@@ -36,6 +51,7 @@ html,body{
     left: 33%;
     height: 80px;
     width: 80px;
+    z-index:3;
 }
 
 .transform {
@@ -47,33 +63,144 @@ html,body{
 }
 
 .pauley-zoom {
-    height: 100%;
-    width: 100%;
+    height: 50%;
+    width: 50%;
     top: 0px;
     left: 0px;
 }
+
+.janss-move-away{
+    left: 100%;
+}
     
-.map-zoom {
-    /* left:-50vw;
-    top: -50vh;
-    width: 200%;
-    height:200%; */
+.map-zoom-pauley {
     transform: scale(3.5) translate(15%);
+    opacity: 0.85;
 }
 
-#cloud {
+.map-zoom-janss {
+    transform: scale(3.5) translate(5%);
+    opacity: 0.85;
+}
+
+/********************/
+/* ALL CLOUD STYLES */
+/********************/
+
+.cloud {
     position: absolute;
-    top: 5%;
-    left: 5%;
-    animation-name: cloud;
-    animation-duration: 10s;
+    animation-duration: 20s;
     animation-iteration-count: infinite;
-    height: 40px;
-    width: 60px;
+    height: 55px;
+    width: 130px;
+    opacity: 0.5;
+}
+
+
+#light1 {
+    top: 22%;
+    left: 75%;
+    animation-name: light1;
+}
+
+@keyframes light1 {
+    0% {left:5%;}
+    50% {left: 20%;}
+    100% {left:5%;}
+}
+
+#light2 {
+    top: 75%;
+    left: 39%;
+    animation-name: light2;
+}
+
+@keyframes light2 {
+    0% {left:42%;}
+    25% {left:45%;}
+    75% {left: 40%;}
+}
+
+#dark1 {
+    top: 15%;
+    left: 60%;
+    animation-name: dark1;
+}
+
+@keyframes dark1 {
+    0% {left:62%;}
+    25% {left:55%;}
+    75% {left: 62%;}
+}
+
+#dark2 {
+    top: 65%;
+    left: 76%;
+    animation-name: dark2;
+}
+
+@keyframes dark2 {
+    0% {left:77%;}
+    25% {left:83%;}
+    75% {left: 77%;}
 }
 
 @keyframes cloud {
     0% {left:5%;}
     50% {left: 0%;}
     100% {left:5%;}
+}
+
+.cloud-off{
+    opacity:0;
+}
+
+/********************/
+/*******INFO GRID****/
+/********************/
+
+.info-grid{
+    display:grid;
+    position:absolute;
+    top: 0px;
+    left: 0px;
+    opacity:0;
+    grid-template-rows: 10vh 20vh 20vh 20vh 10vh;
+    grid-template-columns: 55vw 40vw 5vw;
+    z-index:1;
+}
+
+.info-name{
+    grid-row-start: 2;
+    grid-row-end: 6;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    background-color:#ffb300;
+    border-radius: 20px;
+    border-color: white;
+    border-width: thick;
+}
+
+.info-top{
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+.info-mid{
+    grid-row-start: 4;
+    grid-row-end: 5;
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+.info-last{
+    grid-row-start: 5;
+    grid-row-end: 6;
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+.show-info{
+    opacity:1;
 }
