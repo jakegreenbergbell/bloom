@@ -3,7 +3,17 @@ $(document).ready(function(){
 
     $(".pauley").click(function(){
         $(".pauley").toggleClass("pauley-zoom");
-        $(".map").toggleClass("map-zoom");
+        $(".map").toggleClass("map-zoom-pauley");
+        $(".cloud").toggleClass("cloud-off");
+        $(".janss").toggleClass("janss-move-away");
+        $(".info-grid").toggleClass("show-info");
+        console.log("click");
+    })
+    $(".janss").click(function(){
+        $(".janss").toggleClass("janss-zoom");
+        $(".map").toggleClass("map-zoom-janss");
+        $(".cloud").toggleClass("cloud-off");
+        $(".info-grid").toggleClass("show-info");
         console.log("click");
     })
 })
